@@ -6,10 +6,11 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await di.init();
-  runApp(const ChatGptApp()
-      // DevicePreview(
-      //   enabled: !kReleaseMode,
-      //   builder: ((context) => const ChatGptApp()),
-      // ),
-      );
+  runApp(const ChatGptApp());
+  // runApp(
+  //   DevicePreview(
+  //     enabled: !kReleaseMode,
+  //     builder: ((context) => const ChatGptApp()),
+  //   ),
+  // );
 }

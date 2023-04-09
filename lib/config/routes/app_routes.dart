@@ -1,3 +1,4 @@
+import 'package:chat_gpt/features/chat/presentation/screens/chat_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../features/splash/presentation/screens/splash_screen.dart';
@@ -5,7 +6,7 @@ import '../../features/splash/presentation/screens/splash_screen.dart';
 
 class Routes {
   static const String initialRoute = '/';
-  static const String homeRoute = '/home';
+  static const String chatRoute = '/chat';
 }
 
 class AppRoute {
@@ -15,9 +16,9 @@ class AppRoute {
         return MaterialPageRoute(
           builder: (context) => const SplashScreen(),
         );
-      case Routes.homeRoute:
+      case Routes.chatRoute:
         return MaterialPageRoute(
-          builder: (context) => const SplashScreen(),
+          builder: (context) => const ChatGPTScreen(),
         );
 
       default:

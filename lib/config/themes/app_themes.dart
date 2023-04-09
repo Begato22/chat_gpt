@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/utils/app_colors.dart';
-import '../../core/utils/app_strings.dart';
 
 ThemeData appTheme() {
   return ThemeData(
@@ -10,19 +9,21 @@ ThemeData appTheme() {
     primarySwatch: AppColors.primarySwatch,
     brightness: Brightness.light,
     scaffoldBackgroundColor: AppColors.primaryColor,
-    fontFamily: AppStrings.fontFamily,
+    // fontFamily: AppStrings.fontFamily,
     textTheme: _textTheme,
     inputDecorationTheme: _inputDecorationTheme(),
     elevatedButtonTheme: _elevatedButtonThemeData(),
     appBarTheme: AppBarTheme(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        titleTextStyle: TextStyle(
-          color: Colors.black,
-          fontWeight: FontWeight.w300,
-          fontSize: 22.sp,
-        ),
-        iconTheme: IconThemeData(color: AppColors.primaryColor)),
+      backgroundColor: AppColors.secondaryColor,
+      elevation: 2,
+      titleTextStyle: TextStyle(
+        color: Colors.white,
+        fontWeight: FontWeight.w300,
+        fontSize: 22.sp,
+      ),
+      iconTheme: IconThemeData(color: AppColors.whiteColor),
+      titleSpacing: 0
+    ),
   );
 }
 
@@ -34,18 +35,9 @@ TextTheme _textTheme = TextTheme(
   // headline5: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.sp),
   // headline6: TextStyle(fontWeight: FontWeight.bold, fontSize: 12.sp),
 
-  headlineSmall: TextStyle(
-      fontWeight: FontWeight.bold,
-      fontSize: 12.sp,
-      color: AppColors.blackColor),
-  headlineMedium: TextStyle(
-      fontWeight: FontWeight.bold,
-      fontSize: 22.sp,
-      color: AppColors.blackColor),
-  headlineLarge: TextStyle(
-      fontWeight: FontWeight.bold,
-      fontSize: 30.sp,
-      color: AppColors.blackColor),
+  headlineSmall: TextStyle(fontWeight: FontWeight.bold, fontSize: 12.sp, color: AppColors.blackColor),
+  headlineMedium: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.sp, color: AppColors.blackColor),
+  headlineLarge: TextStyle(fontWeight: FontWeight.bold, fontSize: 30.sp, color: AppColors.blackColor),
 
   // overline: const TextStyle(),
   labelSmall: TextStyle(color: AppColors.whiteColor, fontSize: 12.sp),

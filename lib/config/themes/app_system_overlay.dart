@@ -17,9 +17,9 @@ class AppSystemUiOverlay {
   static defaultSystem() {
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
+        statusBarColor: AppColors.secondaryColor,
         statusBarIconBrightness: Brightness.dark,
-        systemNavigationBarColor: AppColors.whiteColor,
+        systemNavigationBarColor: AppColors.primaryColor,
         systemNavigationBarIconBrightness: Brightness.dark,
       ),
     );

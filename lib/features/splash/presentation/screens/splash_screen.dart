@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   late Timer _timer;
 
   void _getStated() {
-    Navigator.pushReplacementNamed(context, Routes.homeRoute);
+    Navigator.pushReplacementNamed(context, Routes.chatRoute);
   }
 
   void _startDelay() {
@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    AppSystemUiOverlay.splashSystem();
+    AppSystemUiOverlay.defaultSystem();
     _startDelay();
   }
 
