@@ -1,5 +1,7 @@
 import 'package:chat_gpt/core/utils/app_colors.dart';
 import 'package:chat_gpt/core/utils/app_images.dart';
+import 'package:chat_gpt/core/utils/app_strings.dart';
+import 'package:chat_gpt/features/chat/presentation/widgets/chat_widget.dart';
 import 'package:enefty_icons/enefty_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -48,22 +50,24 @@ class _ChatGPTScreenState extends State<ChatGPTScreen> {
               child: ListView.builder(
                 itemCount: 6,
                 itemBuilder: (context, index) {
-                  return const Text(
-                    'data',
-                    style: TextStyle(color: Colors.white),
+                  return ChatWidget(
+                    chatIndex: int.parse(AppStrings.chats[index]['chatIndex'].toString()),
+                    msg: AppStrings.chats[index]['msg'].toString(),
                   );
                 },
               ),
             ),
             if (_isTyping)
-              SpinKitThreeBounce(
-                color: AppColors.whiteColor,
-                size: 15.sp,
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 10.h),
+                child: SpinKitThreeBounce(
+                  color: AppColors.whiteColor,
+                  size: 15.sp,
+                ),
               ),
             SizedBox(height: 10.h),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
-              
+              padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 0.h),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10.r),
                 child: Material(

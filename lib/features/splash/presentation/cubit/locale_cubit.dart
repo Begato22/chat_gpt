@@ -19,7 +19,7 @@ class SplashCubit extends Cubit<LocaleState> {
   Future<void> getLocale() async {
     final response = await getSavedLocaleUseCase.call(NoParams());
     response.fold((failure) {
-      debugPrint(AppStrings.casheFailure);
+      debugPrint(AppStrings.cashFailure);
     }, (langCode) {
       currentLangCode = langCode;
       emit(GetCurrentLangCodeState(Locale(langCode)));
@@ -29,7 +29,7 @@ class SplashCubit extends Cubit<LocaleState> {
   Future<void> _changeLocale(String langCode) async {
     final response = await changeLocaleUseCase.call(langCode);
     response.fold((failure) {
-      debugPrint(AppStrings.casheFailure);
+      debugPrint(AppStrings.cashFailure);
     }, (isChanged) {
       currentLangCode = langCode;
       emit(ChangeLocalState(Locale(langCode)));
