@@ -2,6 +2,7 @@ import 'package:chat_gpt/core/utils/app_colors.dart';
 import 'package:chat_gpt/core/utils/app_images.dart';
 import 'package:chat_gpt/core/utils/app_strings.dart';
 import 'package:chat_gpt/features/chat/presentation/widgets/chat_widget.dart';
+import 'package:chat_gpt/features/chat/presentation/widgets/setting_bottom_sheet.dart';
 import 'package:enefty_icons/enefty_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -39,7 +40,16 @@ class _ChatGPTScreenState extends State<ChatGPTScreen> {
           title: const Text('ChatGPT'),
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                showModalBottomSheet(
+                  backgroundColor: AppColors.primaryColor,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(20.r))),
+                  context: context,
+                  builder: (context) {
+                    return const SettingBottomSheet();
+                  },
+                );
+              },
               icon: const Icon(EneftyIcons.more_circle_outline),
             ),
           ],
